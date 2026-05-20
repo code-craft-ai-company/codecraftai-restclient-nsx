@@ -77,7 +77,7 @@ clear scope statement for what NSX support means in this repository.
 #### Acceptance Criteria
 
 1. WHEN `automojo-provisioning` `venue-vsphere` detects NSX is configured in the
-   target environment AND `automojo-interop-nsx` v2 is installed THE SYSTEM
+   target environment AND `automojo-restclient-nsx` v2 is installed THE SYSTEM
    SHALL be composed into the venue provisioner.
 2. WHEN NSX is not configured OR this package is not installed THE SYSTEM SHALL
    be skipped silently; `venue-vsphere` degrades cleanly per its own contract

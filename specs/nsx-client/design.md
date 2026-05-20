@@ -68,7 +68,7 @@ Request specs in `specs/`:
 ## Module Layout (v2 forecast)
 
 ```
-source/packages/automojo/interop/nsx/
+source/packages/automojo/restclient/nsx/
 ├── __init__.py                   # v1: raises NotImplementedError on import
 ├── nsxclient.py                  # v2 entry
 ├── nsxsession.py                 # v2
@@ -97,7 +97,7 @@ In v1 only `__init__.py` exists; importing any submodule raises a clear
 ## Testing Strategy
 
 In v1: a single test asserts that importing any submodule under
-`automojo.interop.nsx` raises `NotImplementedError` with a clear message. No
+`automojo.restclient.nsx` raises `NotImplementedError` with a clear message. No
 other tests exist in v1.
 
 In v2 (forecast): per-API-group unit tests against `MockHttpSession`; round-trip

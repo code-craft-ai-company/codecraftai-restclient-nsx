@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-interop-nsx"
-description = "Automation Mojo - NSX-T Interop Package"
+name = "automojo-restclient-nsx"
+description = "Automation Mojo - NSX-T REST Client Package"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -14,6 +14,7 @@ keywords = [
     "python",
     "automation",
     "automojo",
+    "restclient",
     "nsx",
     "nsx-t",
     "vmware"

@@ -21,7 +21,7 @@ values code stability, reusability, and scalability over quick fixes and fast de
 - Named-only parameters at every public API boundary
 
 # Project Overview
-The `automojo-interop-nsx` package is the dedicated NSX-T interop client for the
+The `automojo-restclient-nsx` package is the dedicated NSX-T interop client for the
 automojo suite. It is a sibling to `automojo-interop-vsphere`, deliberately kept
 separate because NSX users are a strict subset of vSphere users and the API surfaces
 are large enough that bundling makes the simple (no-NSX) case worse.

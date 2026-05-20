@@ -8,7 +8,7 @@
 
 ## v1 (this release) — spec-only baseline
 
-- [x] 1. ~~Create the `automojo.interop.nsx` package with a single
+- [x] 1. ~~Create the `automojo.restclient.nsx` package with a single
   `__init__.py` that raises `NotImplementedError`~~ — **superseded by
   M14.** The package now ships a full v2 source tree; the eager
   `NotImplementedError` guard is intentionally not present.

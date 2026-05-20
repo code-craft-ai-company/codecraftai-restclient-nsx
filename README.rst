@@ -2,7 +2,7 @@
 Automation Mojo Interop - NSX-T
 =========================================
 
-The ``automojo-interop-nsx`` package is the dedicated NSX-T interop client for the
+The ``automojo-restclient-nsx`` package is the dedicated NSX-T interop client for the
 automojo suite. It is a sibling to ``automojo-interop-vsphere``, deliberately kept
 separate because NSX users are a strict subset of vSphere users and the API surfaces are
 large enough that bundling makes the simple (no-NSX) case worse. The package is composed
@@ -24,8 +24,8 @@ Highlights
 Repository Structure
 ====================
 
-- ``source/packages/automojo/interop/nsx/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/interop/nsx/`` - TestBase test roots.
+- ``source/packages/automojo/restclient/nsx/`` - Package source code.
+- ``source/testroots/testbase/automojo/tests/restclient/nsx/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 
 Running Tests
