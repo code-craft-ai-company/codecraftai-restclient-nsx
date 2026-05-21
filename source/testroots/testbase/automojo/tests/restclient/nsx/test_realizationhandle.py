@@ -10,6 +10,8 @@ __credits__ = []
 
 import pytest
 
+from unittest.mock import MagicMock
+
 from automojo.errors.exceptions import SemanticError
 from automojo.interfaces.itaskhandle import ITaskHandle, TaskState
 
@@ -150,6 +152,36 @@ def test_cancel_raises_when_active() -> None:
     handle.status(aspects=AspectsNsx())
     with pytest.raises(NotImplementedError):
         handle.cancel(aspects=AspectsNsx())
+    return
+
+
+def test_fetch_status_raises_on_non_ok_status() -> None:
+    """
+        Regression coverage for the ``_fetch_status`` HTTP status check
+        (audit MEDIUM: ``_fetch_status`` decoded ``resp.json()`` without a
+        status check). A non-2xx realization-status response must raise
+        rather than decode a body.
+    """
+    bad_resp = MagicMock()
+    bad_resp.status_code = 503
+    bad_resp.content = b"unavailable"
+
+    session = MagicMock()
+    session.get = MagicMock(return_value=bad_resp)
+
+    client = MagicMock()
+    client.build_url = MagicMock(return_value="https://nsx/policy/realized")
+    client.ensure_session = MagicMock(return_value=session)
+
+    handle = NsxRealizationHandle(
+        intent_path="/infra/segments/seg-a",
+        client=client,
+    )
+
+    with pytest.raises(Exception):
+        handle.status(aspects=AspectsNsx())
+
+    bad_resp.json.assert_not_called()
     return
 
 
