@@ -19,9 +19,11 @@ import time
 import logging
 
 from enum import Enum
+from http import HTTPStatus
 from typing import Callable, Optional, TYPE_CHECKING
 
 from automojo.errors.exceptions import SemanticError
+from automojo.errors.raising import raise_for_http_status
 from automojo.interfaces.itaskhandle import (
     ITaskHandle,
     TaskResult,
@@ -408,6 +410,10 @@ class NsxRealizationHandle:
             params={"intent_path": self._intent_path},
             timeout=aspects.completion_timeout,
         )
+        if resp.status_code != HTTPStatus.OK:
+            raise_for_http_status(
+                resp.status_code, resp.content, status_url,
+                context="NsxRealizationHandle._fetch_status")
         rtnval = resp.json()
         return rtnval
 
