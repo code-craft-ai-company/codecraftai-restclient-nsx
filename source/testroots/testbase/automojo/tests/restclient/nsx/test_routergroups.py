@@ -4,18 +4,18 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.nsx.model.gateway import (
+from ccai.restclient.nsx.model.gateway import (
     T0GatewaySummary,
     T1GatewaySummary,
 )
-from automojo.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
-from automojo.restclient.nsx.specs.gatewayspec import T0GatewaySpec, T1GatewaySpec
+from ccai.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
+from ccai.restclient.nsx.specs.gatewayspec import T0GatewaySpec, T1GatewaySpec
 
-from automojo.tests.restclient.nsx.nsxtestsupport import (
+from ccai.tests.restclient.nsx.nsxtestsupport import (
     NSX_BASE,
     make_authenticated_client,
 )

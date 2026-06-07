@@ -8,7 +8,7 @@
 
 ## v1 (this release) — spec-only baseline
 
-- [x] 1. ~~Create the `automojo.restclient.nsx` package with a single
+- [x] 1. ~~Create the `ccai.restclient.nsx` package with a single
   `__init__.py` that raises `NotImplementedError`~~ — **superseded by
   M14.** The package now ships a full v2 source tree; the eager
   `NotImplementedError` guard is intentionally not present.
@@ -16,18 +16,18 @@
 - [x] 2. ~~Single test asserting the import-time error contract.~~ —
   **superseded by M14.** Replaced by the full per-API-group test suite.
 
-- [x] 3. Confirm `automojo-provisioning` `venue-vsphere` does NOT import
+- [x] 3. Confirm `codecraftai-provisioning` `venue-vsphere` does NOT import
   this package in v1 — **N/A under M14** (no v1 spec-only phase); the
   composition contract lives in `venue-vsphere` and is unaffected by
   this repo.
 
 ## v2 (post-v1 baseline)
 
-- [~] 4. Define `NsxManagerCredential` (in `automojo-credentials`) —
+- [~] 4. Define `NsxManagerCredential` (in `codecraftai-credentials`) —
   **DEFERRED.** The M14 directive forbids touching other repos.
   `NsxClient` accepts a `BasicCredential` (username / password) which
   is sufficient for the NSX-T Manager form-based session login.  When
-  `automojo-credentials` later grows an `NsxManagerCredential`, the
+  `codecraftai-credentials` later grows an `NsxManagerCredential`, the
   `NsxClient` constructor's `isinstance` check can be widened with no
   other change.
 
@@ -72,9 +72,9 @@
 
 ## v2 — composition
 
-- [~] 19. Update `automojo-provisioning` `venue-vsphere` to compose
+- [~] 19. Update `codecraftai-provisioning` `venue-vsphere` to compose
   `NsxClient` — **DEFERRED (other repo).** The M14 directive forbids
-  modifying `automojo-provisioning`.  `NsxClient` is constructed via a
+  modifying `codecraftai-provisioning`.  `NsxClient` is constructed via a
   plain keyword-only constructor so `venue-vsphere` can compose it
   without further changes here.
 

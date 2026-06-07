@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -18,14 +18,14 @@ import os
 from http import HTTPStatus
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
-from automojo.errors.exceptions import SemanticError
-from automojo.errors.raising import raise_for_http_status
-from automojo.restclient.base.restapigroup import RestApiGroup
+from ccai.errors.exceptions import SemanticError
+from ccai.errors.raising import raise_for_http_status
+from ccai.restclient.base.restapigroup import RestApiGroup
 
 
 if TYPE_CHECKING:
-    from automojo.restclient.nsx.aspectsnsx import AspectsNsx
-    from automojo.restclient.nsx.nsxclient import NsxClient
+    from ccai.restclient.nsx.aspectsnsx import AspectsNsx
+    from ccai.restclient.nsx.nsxclient import NsxClient
 
 
 _POLICY_PREFIX = "/policy/api/v1/"

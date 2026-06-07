@@ -8,7 +8,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -18,8 +18,8 @@ from http import HTTPStatus
 
 from requests import Session, Response
 
-from automojo.credentials.basiccredential import BasicCredential
-from automojo.errors.exceptions import HttpForbiddenError
+from ccai.credentials.basiccredential import BasicCredential
+from ccai.errors.exceptions import HttpForbiddenError
 
 
 # NSX-T Manager session-create endpoint.  It is intentionally NOT under

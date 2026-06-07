@@ -7,17 +7,17 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import List
 
-from automojo.restclient.nsx.apigroups.basegroup import BaseGroup
-from automojo.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
-from automojo.restclient.nsx.model.security import SecurityGroupSummary
-from automojo.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
-from automojo.restclient.nsx.specs.securityspec import SecurityGroupSpec
+from ccai.restclient.nsx.apigroups.basegroup import BaseGroup
+from ccai.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
+from ccai.restclient.nsx.model.security import SecurityGroupSummary
+from ccai.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
+from ccai.restclient.nsx.specs.securityspec import SecurityGroupSpec
 
 
 # NSX-T policy security groups live under a domain; ``default`` is the

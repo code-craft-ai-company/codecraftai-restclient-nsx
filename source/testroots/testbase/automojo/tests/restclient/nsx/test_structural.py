@@ -4,17 +4,17 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.base.restapigroup import RestApiGroup
+from ccai.restclient.base.restapigroup import RestApiGroup
 
-from automojo.restclient.nsx.apigroups.basegroup import BaseGroup
-from automojo.restclient.nsx.nsxclient import _GROUP_REGISTRY
+from ccai.restclient.nsx.apigroups.basegroup import BaseGroup
+from ccai.restclient.nsx.nsxclient import _GROUP_REGISTRY
 
-from automojo.tests.restclient.nsx.nsxtestsupport import make_credential
-from automojo.restclient.nsx.nsxclient import NsxClient
+from ccai.tests.restclient.nsx.nsxtestsupport import make_credential
+from ccai.restclient.nsx.nsxclient import NsxClient
 
 
 def test_every_registered_group_resolves() -> None:

@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -17,7 +17,7 @@ import logging
 
 from typing import Optional
 
-from automojo.restclient.base.aspectsrest import (
+from ccai.restclient.base.aspectsrest import (
     AspectsRest,
     ActionPattern,
     LoggingPattern,

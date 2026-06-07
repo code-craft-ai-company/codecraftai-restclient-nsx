@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-restclient-nsx"
-description = "Automation Mojo - NSX-T REST Client Package"
+name = "codecraftai-restclient-nsx"
+description = "Code Craft AI - NSX-T REST Client Package"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -13,21 +13,21 @@ classifiers = [
 keywords = [
     "python",
     "automation",
-    "automojo",
+    "ccai",
     "restclient",
     "nsx",
     "nsx-t",
     "vmware"
 ]
-packages = [{include="automojo", from="source/packages"}]
+packages = [{include="ccai", from="source/packages"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
 requests = "^2.32.5"
-automojo-errors = { git = "https://github.com/automationmojo/automojo-errors.git", branch = "main" }
-automojo-interfaces = { git = "https://github.com/automationmojo/automojo-interfaces.git", branch = "main" }
-automojo-credentials = { git = "https://github.com/automationmojo/automojo-credentials.git", branch = "main" }
-automojo-restclient-base = { git = "https://github.com/automationmojo/automojo-restclient-base.git", branch = "main" }
+codecraftai-errors = { git = "https://github.com/automationmojo/codecraftai-errors.git", branch = "main" }
+codecraftai-interfaces = { git = "https://github.com/automationmojo/codecraftai-interfaces.git", branch = "main" }
+codecraftai-credentials = { git = "https://github.com/automationmojo/codecraftai-credentials.git", branch = "main" }
+codecraftai-restclient-base = { git = "https://github.com/automationmojo/codecraftai-restclient-base.git", branch = "main" }
 
 [tool.poetry.group.dev.dependencies]
 hypothesis = ">=6.0.0"

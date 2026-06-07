@@ -3,13 +3,13 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.credentials.basiccredential import BasicCredential
+from ccai.credentials.basiccredential import BasicCredential
 
-from automojo.restclient.nsx.nsxclient import NsxClient
+from ccai.restclient.nsx.nsxclient import NsxClient
 
 
 NSX_HOST = "nsx.example.com"

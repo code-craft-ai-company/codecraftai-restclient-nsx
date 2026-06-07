@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -20,18 +20,18 @@ from typing import Any, Dict, Optional
 
 from requests import Session
 
-from automojo.credentials.basecredential import BaseCredential
-from automojo.credentials.basiccredential import BasicCredential
+from ccai.credentials.basecredential import BaseCredential
+from ccai.credentials.basiccredential import BasicCredential
 
-from automojo.errors.exceptions import (
+from ccai.errors.exceptions import (
     HttpForbiddenError,
     HttpUnAuthorizedError,
     SemanticError,
 )
-from automojo.restclient.base.restclientbase import RestClientBase
+from ccai.restclient.base.restclientbase import RestClientBase
 
-from automojo.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
-from automojo.restclient.nsx.nsxsession import (
+from ccai.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
+from ccai.restclient.nsx.nsxsession import (
     AUTH_LEAF,
     apply_session_token,
     mint_session_token,
@@ -45,25 +45,25 @@ _POLICY_PREFIX = "/policy/api/v1/"
 # Policy API groups exposed on :class:`NsxClient`.
 _GROUP_REGISTRY = (
     ("Segments",
-        "automojo.restclient.nsx.apigroups.segmentsgroup",
+        "ccai.restclient.nsx.apigroups.segmentsgroup",
         "SegmentsGroup"),
     ("T0Routers",
-        "automojo.restclient.nsx.apigroups.t0routersgroup",
+        "ccai.restclient.nsx.apigroups.t0routersgroup",
         "T0RoutersGroup"),
     ("T1Routers",
-        "automojo.restclient.nsx.apigroups.t1routersgroup",
+        "ccai.restclient.nsx.apigroups.t1routersgroup",
         "T1RoutersGroup"),
     ("SecurityGroups",
-        "automojo.restclient.nsx.apigroups.securitygroupsgroup",
+        "ccai.restclient.nsx.apigroups.securitygroupsgroup",
         "SecurityGroupsGroup"),
     ("Dfw",
-        "automojo.restclient.nsx.apigroups.dfwgroup",
+        "ccai.restclient.nsx.apigroups.dfwgroup",
         "DfwGroup"),
     ("Nat",
-        "automojo.restclient.nsx.apigroups.natgroup",
+        "ccai.restclient.nsx.apigroups.natgroup",
         "NatGroup"),
     ("LoadBalancers",
-        "automojo.restclient.nsx.apigroups.loadbalancersgroup",
+        "ccai.restclient.nsx.apigroups.loadbalancersgroup",
         "LoadBalancersGroup"),
 )
 

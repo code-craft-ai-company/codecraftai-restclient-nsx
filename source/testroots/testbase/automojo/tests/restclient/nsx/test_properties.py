@@ -4,17 +4,17 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
 from hypothesis import given, strategies as st
 
-from automojo.restclient.nsx.apigroups.segmentsgroup import SegmentsGroup
-from automojo.restclient.nsx.aspectsnsx import AspectsNsx
-from automojo.restclient.nsx.nsxclient import NsxClient
+from ccai.restclient.nsx.apigroups.segmentsgroup import SegmentsGroup
+from ccai.restclient.nsx.aspectsnsx import AspectsNsx
+from ccai.restclient.nsx.nsxclient import NsxClient
 
-from automojo.tests.restclient.nsx.nsxtestsupport import (
+from ccai.tests.restclient.nsx.nsxtestsupport import (
     NSX_BASE,
     make_credential,
 )

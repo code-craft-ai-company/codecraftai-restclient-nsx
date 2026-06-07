@@ -4,7 +4,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -12,11 +12,11 @@ import pytest
 
 from unittest.mock import MagicMock
 
-from automojo.errors.exceptions import SemanticError
-from automojo.interfaces.itaskhandle import ITaskHandle, TaskState
+from ccai.errors.exceptions import SemanticError
+from ccai.interfaces.itaskhandle import ITaskHandle, TaskState
 
-from automojo.restclient.nsx.aspectsnsx import AspectsNsx
-from automojo.restclient.nsx.nsxrealizationhandle import (
+from ccai.restclient.nsx.aspectsnsx import AspectsNsx
+from ccai.restclient.nsx.nsxrealizationhandle import (
     NsxRealizationError,
     NsxRealizationHandle,
     NsxRealizationTimeoutError,
@@ -187,7 +187,7 @@ def test_fetch_status_raises_on_non_ok_status() -> None:
 
 def test_orphaned_is_terminal() -> None:
     assert RealizationState.ORPHANED in __import__(
-        "automojo.restclient.nsx.nsxrealizationhandle",
+        "ccai.restclient.nsx.nsxrealizationhandle",
         fromlist=["TERMINAL_STATES"],
     ).TERMINAL_STATES
     return

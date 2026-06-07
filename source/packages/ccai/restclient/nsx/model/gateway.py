@@ -7,12 +7,12 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.base.schemaobject import SchemaObject
-from automojo.restclient.base.schemafield import Field
+from ccai.restclient.base.schemaobject import SchemaObject
+from ccai.restclient.base.schemafield import Field
 
 
 class T0GatewaySummary(SchemaObject):
