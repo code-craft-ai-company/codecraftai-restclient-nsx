@@ -8,17 +8,17 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import List
 
-from automojo.restclient.nsx.apigroups.basegroup import BaseGroup
-from automojo.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
-from automojo.restclient.nsx.model.segment import SegmentInfo, SegmentSummary
-from automojo.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
-from automojo.restclient.nsx.specs.segmentspec import SegmentSpec
+from ccai.restclient.nsx.apigroups.basegroup import BaseGroup
+from ccai.restclient.nsx.aspectsnsx import AspectsNsx, DEFAULT_NSX_ASPECTS
+from ccai.restclient.nsx.model.segment import SegmentInfo, SegmentSummary
+from ccai.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
+from ccai.restclient.nsx.specs.segmentspec import SegmentSpec
 
 
 class SegmentsGroup(BaseGroup):

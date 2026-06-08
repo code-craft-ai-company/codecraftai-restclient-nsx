@@ -4,13 +4,13 @@
     :synopsis: Provides :class:`NsxRealizationHandle`, the sync-poll
         Aspects-driven handle returned by every mutating NSX-T policy
         call.  Conforms structurally to :class:`ITaskHandle` from
-        ``automojo-interfaces``.
+        ``codecraftai-interfaces``.
 
     .. moduleauthor:: Myron Walker <myron.walker@gmail.com>
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -22,20 +22,20 @@ from enum import Enum
 from http import HTTPStatus
 from typing import Callable, Optional, TYPE_CHECKING
 
-from automojo.errors.exceptions import SemanticError
-from automojo.errors.raising import raise_for_http_status
-from automojo.interfaces.itaskhandle import (
+from ccai.errors.exceptions import SemanticError
+from ccai.errors.raising import raise_for_http_status
+from ccai.interfaces.itaskhandle import (
     ITaskHandle,
     TaskResult,
     TaskState as IfaceTaskState,
 )
 
-from automojo.restclient.nsx.model.realization import RealizationStateInfo
+from ccai.restclient.nsx.model.realization import RealizationStateInfo
 
 
 if TYPE_CHECKING:
-    from automojo.restclient.nsx.aspectsnsx import AspectsNsx
-    from automojo.restclient.nsx.nsxclient import NsxClient
+    from ccai.restclient.nsx.aspectsnsx import AspectsNsx
+    from ccai.restclient.nsx.nsxclient import NsxClient
 
 
 class RealizationState(str, Enum):
@@ -150,7 +150,7 @@ class NsxRealizationHandle:
         endpoint for the intent path until a terminal state is reached.
 
         The handle conforms structurally to
-        :class:`automojo.interfaces.itaskhandle.ITaskHandle` so it is
+        :class:`ccai.interfaces.itaskhandle.ITaskHandle` so it is
         recognised by ``isinstance(handle, ITaskHandle)``.
     """
 
@@ -295,7 +295,7 @@ class NsxRealizationHandle:
 
         logger = aspects.logger
         if logger is None:
-            logger = logging.getLogger("automojo.restclient.nsx")
+            logger = logging.getLogger("ccai.restclient.nsx")
 
         started = clock()
         last_state: Optional[RealizationState] = None

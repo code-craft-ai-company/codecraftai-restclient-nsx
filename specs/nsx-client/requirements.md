@@ -5,7 +5,7 @@
 The `nsx-client` feature delivers `NsxClient`, a `RestClientBase` subclass that
 talks to NSX-T Manager. **This is a v2 (post-v1 baseline) feature.** This spec
 exists in v1 only as the scope-baseline so that the v1 work in
-`automojo-interop-vsphere` and `automojo-provisioning` `venue-vsphere` can refer to
+`codecraftai-interop-vsphere` and `codecraftai-provisioning` `venue-vsphere` can refer to
 it as a future composition target without ambiguity. No source code lands in v1.
 
 The v2 surface, when implemented, will cover NSX-T logical networking
@@ -13,7 +13,7 @@ The v2 surface, when implemented, will cover NSX-T logical networking
 groups), services (load balancers, NAT), and inventory (VMs, virtual interfaces,
 IP discovery).
 
-The `automojo-provisioning` `venue-vsphere` composes `NsxClient` when present and
+The `codecraftai-provisioning` `venue-vsphere` composes `NsxClient` when present and
 degrades cleanly when NSX is not configured in the target environment — that
 graceful-degradation behaviour is part of the v1 `venue-vsphere` contract, not
 this spec.
@@ -31,11 +31,11 @@ clear scope statement for what NSX support means in this repository.
 
 1. THE SYSTEM SHALL document that this package targets NSX-T 4.x as the primary
    API revision; NSX-V (legacy) is explicitly out of scope.
-2. THE SYSTEM SHALL document that the v1 release of the automojo monorepo ships
+2. THE SYSTEM SHALL document that the v1 release of the ccai monorepo ships
    this package as **spec-only**: no `source/packages/` code is published.
 3. THE SYSTEM SHALL document that the first source code milestone for this
-   package is v2, post the v1 baseline shipping of `automojo-interop-vsphere`
-   and `automojo-provisioning` `venue-vsphere`.
+   package is v2, post the v1 baseline shipping of `codecraftai-interop-vsphere`
+   and `codecraftai-provisioning` `venue-vsphere`.
 
 ---
 
@@ -76,8 +76,8 @@ clear scope statement for what NSX support means in this repository.
 
 #### Acceptance Criteria
 
-1. WHEN `automojo-provisioning` `venue-vsphere` detects NSX is configured in the
-   target environment AND `automojo-restclient-nsx` v2 is installed THE SYSTEM
+1. WHEN `codecraftai-provisioning` `venue-vsphere` detects NSX is configured in the
+   target environment AND `codecraftai-restclient-nsx` v2 is installed THE SYSTEM
    SHALL be composed into the venue provisioner.
 2. WHEN NSX is not configured OR this package is not installed THE SYSTEM SHALL
    be skipped silently; `venue-vsphere` degrades cleanly per its own contract

@@ -1,4 +1,4 @@
-#!/Users/myron/repos/automojo/automojo-interop-nsx/.venv/bin/python
+#!/Users/myron/repos/ccai/codecraftai-interop-nsx/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

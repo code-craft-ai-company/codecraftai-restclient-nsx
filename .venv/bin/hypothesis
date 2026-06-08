@@ -1,4 +1,4 @@
-#!/Users/myron/repos/automojo/automojo-interop-nsx/.venv/bin/python
+#!/Users/myron/repos/ccai/codecraftai-interop-nsx/.venv/bin/python
 import sys
 from hypothesis.extra.cli import main
 if __name__ == '__main__':

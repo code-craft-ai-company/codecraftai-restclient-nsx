@@ -4,23 +4,23 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.nsx.model.security import (
+from ccai.restclient.nsx.model.security import (
     DfwPolicy,
     DfwRule,
     SecurityGroupSummary,
 )
-from automojo.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
-from automojo.restclient.nsx.specs.securityspec import (
+from ccai.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
+from ccai.restclient.nsx.specs.securityspec import (
     DfwPolicySpec,
     DfwRuleSpec,
     SecurityGroupSpec,
 )
 
-from automojo.tests.restclient.nsx.nsxtestsupport import (
+from ccai.tests.restclient.nsx.nsxtestsupport import (
     NSX_BASE,
     make_authenticated_client,
 )

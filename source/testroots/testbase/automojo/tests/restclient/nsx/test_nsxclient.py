@@ -4,19 +4,19 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
 import pytest
 
-from automojo.credentials.apitokencredential import ApiTokenCredential
-from automojo.errors.exceptions import SemanticError
+from ccai.credentials.apitokencredential import ApiTokenCredential
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.nsx.nsxclient import NsxClient
-from automojo.restclient.nsx.nsxsession import XSRF_HEADER
+from ccai.restclient.nsx.nsxclient import NsxClient
+from ccai.restclient.nsx.nsxsession import XSRF_HEADER
 
-from automojo.tests.restclient.nsx.nsxtestsupport import (
+from ccai.tests.restclient.nsx.nsxtestsupport import (
     NSX_BASE,
     make_credential,
 )

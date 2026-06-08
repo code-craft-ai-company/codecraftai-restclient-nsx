@@ -3,35 +3,35 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2025, Automation Mojo LLC"
+__copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.nsx.model.gateway import (
+from ccai.restclient.nsx.model.gateway import (
     T0GatewaySummary,
     T1GatewaySummary,
 )
-from automojo.restclient.nsx.model.realization import RealizationStateInfo
-from automojo.restclient.nsx.model.security import (
+from ccai.restclient.nsx.model.realization import RealizationStateInfo
+from ccai.restclient.nsx.model.security import (
     DfwPolicy,
     DfwRule,
     SecurityGroupSummary,
 )
-from automojo.restclient.nsx.model.segment import SegmentInfo, SegmentSummary
-from automojo.restclient.nsx.model.services import (
+from ccai.restclient.nsx.model.segment import SegmentInfo, SegmentSummary
+from ccai.restclient.nsx.model.services import (
     LbPool,
     LbVirtualServer,
     LoadBalancerSummary,
     NatRule,
 )
-from automojo.restclient.nsx.specs.gatewayspec import T0GatewaySpec, T1GatewaySpec
-from automojo.restclient.nsx.specs.securityspec import (
+from ccai.restclient.nsx.specs.gatewayspec import T0GatewaySpec, T1GatewaySpec
+from ccai.restclient.nsx.specs.securityspec import (
     DfwPolicySpec,
     DfwRuleSpec,
     SecurityGroupSpec,
 )
-from automojo.restclient.nsx.specs.segmentspec import SegmentSpec
-from automojo.restclient.nsx.specs.servicesspec import (
+from ccai.restclient.nsx.specs.segmentspec import SegmentSpec
+from ccai.restclient.nsx.specs.servicesspec import (
     LbPoolSpec,
     LbVirtualServerSpec,
     LoadBalancerSpec,
