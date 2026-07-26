@@ -134,3 +134,4 @@ dmypy.json
 
 # macOS Finder metadata
 .DS_Store
+/.venv/
