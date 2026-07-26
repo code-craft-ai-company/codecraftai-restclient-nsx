@@ -8,7 +8,8 @@ __copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-from hypothesis import given, strategies as st
+from ccai.testbase.properties import given
+from ccai.testbase.properties import strategies as st
 
 from ccai.restclient.nsx.apigroups.segmentsgroup import SegmentsGroup
 from ccai.restclient.nsx.aspectsnsx import AspectsNsx
