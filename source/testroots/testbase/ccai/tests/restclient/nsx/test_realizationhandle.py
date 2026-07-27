@@ -8,7 +8,8 @@ __copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
 
 from unittest.mock import MagicMock
 
@@ -89,7 +90,7 @@ def test_wait_raises_on_error_state() -> None:
         sleeper=lambda _interval: None,
         clock=_fake_clock(),
     )
-    with pytest.raises(NsxRealizationError):
+    with testbase.raises(NsxRealizationError):
         handle.wait(aspects=AspectsNsx())
     return
 
@@ -103,7 +104,7 @@ def test_wait_times_out() -> None:
         clock=_fake_clock(),
     )
     aspects = AspectsNsx(completion_timeout=3.0, completion_interval=1.0)
-    with pytest.raises(NsxRealizationTimeoutError):
+    with testbase.raises(NsxRealizationTimeoutError):
         handle.wait(aspects=aspects)
     return
 
@@ -115,7 +116,7 @@ def test_wait_rejects_nonpositive_interval() -> None:
         status_fetcher=_scripted_fetcher(["REALIZED"]),
     )
     aspects = AspectsNsx(completion_interval=0.0)
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         handle.wait(aspects=aspects)
     return
 
@@ -150,7 +151,7 @@ def test_cancel_raises_when_active() -> None:
         status_fetcher=_scripted_fetcher(["IN_PROGRESS"]),
     )
     handle.status(aspects=AspectsNsx())
-    with pytest.raises(NotImplementedError):
+    with testbase.raises(NotImplementedError):
         handle.cancel(aspects=AspectsNsx())
     return
 
@@ -178,7 +179,7 @@ def test_fetch_status_raises_on_non_ok_status() -> None:
         client=client,
     )
 
-    with pytest.raises(Exception):
+    with testbase.raises(Exception):
         handle.status(aspects=AspectsNsx())
 
     bad_resp.json.assert_not_called()

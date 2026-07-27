@@ -8,7 +8,8 @@ __copyright__ = "Copyright 2025, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
 
 from ccai.credentials.apitokencredential import ApiTokenCredential
 from ccai.errors.exceptions import SemanticError
@@ -32,7 +33,7 @@ def test_construct_rejects_non_basic_credential() -> None:
     bad = ApiTokenCredential(
         identifier="t", categories=["api-token"], token="x"
     )
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         NsxClient(host="nsx.example.com", credential=bad)
     return
 
@@ -46,14 +47,14 @@ def test_build_url_accepts_policy_leaf() -> None:
 
 def test_build_url_rejects_non_policy_leaf() -> None:
     client = NsxClient(host="nsx.example.com", credential=make_credential())
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         client.build_url(leaf="/api/session/create")
     return
 
 
 def test_unknown_group_raises_attribute_error() -> None:
     client = NsxClient(host="nsx.example.com", credential=make_credential())
-    with pytest.raises(AttributeError):
+    with testbase.raises(AttributeError):
         _ = client.NoSuchGroup
     return
 
