@@ -27,6 +27,9 @@ from ccai.tests.restclient.nsx.nsxtestsupport import (
     make_authenticated_client,
 )
 
+from ccai import testbase
+from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+
 
 _NAT_BASE = (
     NSX_BASE + "/policy/api/v1/infra/tier-1s/t1-a/nat/USER/nat-rules"
@@ -36,6 +39,7 @@ _VS_URL = NSX_BASE + "/policy/api/v1/infra/lb-virtual-servers"
 _POOL_URL = NSX_BASE + "/policy/api/v1/infra/lb-pools"
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_nat_list(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -47,6 +51,7 @@ def test_nat_list(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_nat_get(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -58,6 +63,7 @@ def test_nat_get(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_nat_create_or_update(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_NAT_BASE + "/n-new", json={"id": "n-new"})
@@ -77,6 +83,7 @@ def test_nat_create_or_update(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_nat_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_NAT_BASE + "/n-old", status_code=200)
@@ -85,6 +92,7 @@ def test_nat_delete(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_list(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -96,6 +104,7 @@ def test_lb_list(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_get(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -107,6 +116,7 @@ def test_lb_get(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_create_or_update(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_LB_URL + "/lb-new", json={"id": "lb-new"})
@@ -124,6 +134,7 @@ def test_lb_create_or_update(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_LB_URL + "/lb-old", status_code=200)
@@ -132,6 +143,7 @@ def test_lb_delete(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_virtual_servers(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -143,6 +155,7 @@ def test_lb_virtual_servers(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_create_virtual_server(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_VS_URL + "/vs-new", json={"id": "vs-new"})
@@ -159,6 +172,7 @@ def test_lb_create_virtual_server(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_pools(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -170,6 +184,7 @@ def test_lb_pools(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_lb_create_pool(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_POOL_URL + "/pool-new", json={"id": "pool-new"})

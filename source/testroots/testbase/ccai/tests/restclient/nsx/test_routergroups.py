@@ -20,11 +20,15 @@ from ccai.tests.restclient.nsx.nsxtestsupport import (
     make_authenticated_client,
 )
 
+from ccai import testbase
+from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+
 
 _T0_URL = NSX_BASE + "/policy/api/v1/infra/tier-0s"
 _T1_URL = NSX_BASE + "/policy/api/v1/infra/tier-1s"
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t0_list(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -37,6 +41,7 @@ def test_t0_list(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t0_get(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -48,6 +53,7 @@ def test_t0_get(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t0_create_or_update(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_T0_URL + "/t0-new", json={"id": "t0-new"})
@@ -60,6 +66,7 @@ def test_t0_create_or_update(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t0_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_T0_URL + "/t0-old", status_code=204)
@@ -68,6 +75,7 @@ def test_t0_delete(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t1_list(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -79,6 +87,7 @@ def test_t1_list(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t1_get(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -90,6 +99,7 @@ def test_t1_get(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t1_create_or_update(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_T1_URL + "/t1-new", json={"id": "t1-new"})
@@ -105,6 +115,7 @@ def test_t1_create_or_update(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_t1_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_T1_URL + "/t1-old", status_code=200)

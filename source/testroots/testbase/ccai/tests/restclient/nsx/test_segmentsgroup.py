@@ -16,10 +16,14 @@ from ccai.tests.restclient.nsx.nsxtestsupport import (
     make_authenticated_client,
 )
 
+from ccai import testbase
+from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+
 
 _SEGMENTS_URL = NSX_BASE + "/policy/api/v1/infra/segments"
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_list_single_page(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -38,6 +42,7 @@ def test_list_single_page(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_list_follows_cursor(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -64,6 +69,7 @@ def test_list_follows_cursor(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_get_hits_id_url(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -76,6 +82,7 @@ def test_get_hits_id_url(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_create_or_update_returns_handle(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(
@@ -94,6 +101,7 @@ def test_create_or_update_returns_handle(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_delete_issues_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_SEGMENTS_URL + "/seg-old", status_code=200)

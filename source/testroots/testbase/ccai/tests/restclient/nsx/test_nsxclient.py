@@ -22,6 +22,8 @@ from ccai.tests.restclient.nsx.nsxtestsupport import (
     make_credential,
 )
 
+from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+
 
 def test_construct_with_basic_credential() -> None:
     client = NsxClient(host="nsx.example.com", credential=make_credential())
@@ -59,6 +61,7 @@ def test_unknown_group_raises_attribute_error() -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_authenticate_mints_session_token(requests_mock) -> None:
     requests_mock.post(
         NSX_BASE + "/api/session/create",
@@ -72,6 +75,7 @@ def test_authenticate_mints_session_token(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_ensure_session_authenticates_lazily(requests_mock) -> None:
     requests_mock.post(
         NSX_BASE + "/api/session/create",

@@ -25,12 +25,16 @@ from ccai.tests.restclient.nsx.nsxtestsupport import (
     make_authenticated_client,
 )
 
+from ccai import testbase
+from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+
 
 _DOMAIN_BASE = NSX_BASE + "/policy/api/v1/infra/domains/default"
 _GROUPS_URL = _DOMAIN_BASE + "/groups"
 _POLICIES_URL = _DOMAIN_BASE + "/security-policies"
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_security_group_list(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -42,6 +46,7 @@ def test_security_group_list(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_security_group_get(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -53,6 +58,7 @@ def test_security_group_get(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_security_group_create_or_update(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_GROUPS_URL + "/g-new", json={"id": "g-new"})
@@ -68,6 +74,7 @@ def test_security_group_create_or_update(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_security_group_delete(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_GROUPS_URL + "/g-old", status_code=200)
@@ -76,6 +83,7 @@ def test_security_group_delete(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_list_policies(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -87,6 +95,7 @@ def test_dfw_list_policies(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_get_policy(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -98,6 +107,7 @@ def test_dfw_get_policy(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_create_policy(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(_POLICIES_URL + "/p-new", json={"id": "p-new"})
@@ -111,6 +121,7 @@ def test_dfw_create_policy(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_delete_policy(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(_POLICIES_URL + "/p-old", status_code=200)
@@ -119,6 +130,7 @@ def test_dfw_delete_policy(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_list_rules(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.get(
@@ -130,6 +142,7 @@ def test_dfw_list_rules(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_create_rule(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.patch(
@@ -152,6 +165,7 @@ def test_dfw_create_rule(requests_mock) -> None:
     return
 
 
+@testbase.attach.parameter(create_nsx_requests_mock, identifier="requests_mock")
 def test_dfw_delete_rule(requests_mock) -> None:
     client = make_authenticated_client()
     requests_mock.delete(
