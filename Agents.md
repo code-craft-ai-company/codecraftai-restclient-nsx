@@ -68,8 +68,10 @@ introduce a scoped codegen step driven by a trimmed OpenAPI document;
 that decision is out of scope here.
 
 # Testing Conventions
-`pytest`-based with HTTP fully mocked via `requests-mock` (keyed on URL +
-method). No live NSX manager required.  Realization-state poll loops are
+`testbase`-based with HTTP fully mocked via `requests-mock` (keyed on URL +
+method). Tests live under 'source/testroots/testbase/ccai/tests/restclient/nsx'
+and use `testbase.raises` / `testbase.properties`; this section previously said
+`pytest`, which the code has never used. No live NSX manager required.  Realization-state poll loops are
 tested with injected status fetchers / clocks so no wall-clock is
 involved.
 
