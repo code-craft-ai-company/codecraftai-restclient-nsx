@@ -17,12 +17,12 @@ from ccai.errors.exceptions import SemanticError
 from ccai.restclient.nsx.nsxclient import NsxClient
 from ccai.restclient.nsx.nsxsession import XSRF_HEADER
 
-from ccai.tests.restclient.nsx.nsxtestsupport import (
+from .nsxtestsupport import (
     NSX_BASE,
     make_credential,
 )
 
-from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+from .factories import create_nsx_requests_mock
 
 
 def test_construct_with_basic_credential() -> None:

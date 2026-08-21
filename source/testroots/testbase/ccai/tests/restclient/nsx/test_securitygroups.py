@@ -20,13 +20,13 @@ from ccai.restclient.nsx.specs.securityspec import (
     SecurityGroupSpec,
 )
 
-from ccai.tests.restclient.nsx.nsxtestsupport import (
+from .nsxtestsupport import (
     NSX_BASE,
     make_authenticated_client,
 )
 
 from ccai import testbase
-from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+from .factories import create_nsx_requests_mock
 
 
 _DOMAIN_BASE = NSX_BASE + "/policy/api/v1/infra/domains/default"

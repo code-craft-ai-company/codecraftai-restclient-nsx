@@ -22,13 +22,13 @@ from ccai.restclient.nsx.specs.servicesspec import (
     NatRuleSpec,
 )
 
-from ccai.tests.restclient.nsx.nsxtestsupport import (
+from .nsxtestsupport import (
     NSX_BASE,
     make_authenticated_client,
 )
 
 from ccai import testbase
-from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+from .factories import create_nsx_requests_mock
 
 
 _NAT_BASE = (

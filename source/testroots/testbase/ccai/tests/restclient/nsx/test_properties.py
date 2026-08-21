@@ -15,7 +15,7 @@ from ccai.restclient.nsx.apigroups.segmentsgroup import SegmentsGroup
 from ccai.restclient.nsx.aspectsnsx import AspectsNsx
 from ccai.restclient.nsx.nsxclient import NsxClient
 
-from ccai.tests.restclient.nsx.nsxtestsupport import (
+from .nsxtestsupport import (
     NSX_BASE,
     make_credential,
 )

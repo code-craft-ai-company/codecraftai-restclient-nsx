@@ -11,13 +11,13 @@ from ccai.restclient.nsx.model.segment import SegmentInfo, SegmentSummary
 from ccai.restclient.nsx.nsxrealizationhandle import NsxRealizationHandle
 from ccai.restclient.nsx.specs.segmentspec import SegmentSpec
 
-from ccai.tests.restclient.nsx.nsxtestsupport import (
+from .nsxtestsupport import (
     NSX_BASE,
     make_authenticated_client,
 )
 
 from ccai import testbase
-from ccai.tests.restclient.nsx.factories import create_nsx_requests_mock
+from .factories import create_nsx_requests_mock
 
 
 _SEGMENTS_URL = NSX_BASE + "/policy/api/v1/infra/segments"

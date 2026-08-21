@@ -13,7 +13,7 @@ from ccai.restclient.base.restapigroup import RestApiGroup
 from ccai.restclient.nsx.apigroups.basegroup import BaseGroup
 from ccai.restclient.nsx.nsxclient import _GROUP_REGISTRY
 
-from ccai.tests.restclient.nsx.nsxtestsupport import make_credential
+from .nsxtestsupport import make_credential
 from ccai.restclient.nsx.nsxclient import NsxClient
 
 
