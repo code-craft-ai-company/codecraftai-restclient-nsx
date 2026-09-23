@@ -25,7 +25,6 @@ from typing import Callable, Optional, TYPE_CHECKING
 from ccai.errors.exceptions import SemanticError
 from ccai.errors.raising import raise_for_http_status
 from ccai.interfaces.itaskhandle import (
-    ITaskHandle,
     TaskResult,
     TaskState as IfaceTaskState,
 )
@@ -416,10 +415,3 @@ class NsxRealizationHandle:
                 context="NsxRealizationHandle._fetch_status")
         rtnval = resp.json()
         return rtnval
-
-
-# Runtime conformance attestation.  ``ITaskHandle`` is a
-# ``@runtime_checkable`` Protocol, so isinstance() works structurally;
-# this assignment exists purely to make the structural relationship
-# obvious to readers and to lock the import into the module.
-_ITASKHANDLE_PROTOCOL = ITaskHandle
